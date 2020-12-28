@@ -1,0 +1,203 @@
+A comet is approaching
+
+You, the astronomancer(?), have been tasked to find out whether this
+is bad, and if it is, to stop it.
+
+You are able to listen to the stars tell you about the last times this
+happened.
+
+Some offer you something, a way to stop it potentially.
+
+However, the ones doing the offering are dangerous and some caused the
+bad things that were seen in previous visits
+
+Right solution might be to play two or more of them off each other?
+
+If we need much of a HUD, then make stars show up in a circle, the top
+of the observatory, information can go in corners. HUD likely
+unnecessary, though.
+
+Maybe have a way to store notes? Potentially, even, revisit all the
+information you've received in one place, plus add written notes of
+your own? Draw lines between notes? Write links using [[syntax]]? Or
+say this is a doodle, go get a piece of paper?
+
+Might need to offer the standard timeline that everyone in their world
+should know:
+
+- Creation story about emerging from the water. Fire demon
+- An ancient Sorcerer-King, short lived
+- Cult of day and cult of night had a war, cult of night triumphed
+  which is why we watch the stars.
+- Time of peace, unified kingdom
+- Kingdom falls apart, your Queen is just that of one city state
+
+
+Conceit might be you're quizzing your student. Can we add another person?
+---
+
+Timeline:
+
+1. The comet appears. Unluckily, there is a flood. Several cities are
+wiped away, and survivors band together and settle on a mountain. This
+marks the beginning of this civilization as we know it. Records and
+institutional knowlege were lost, so this is the "first" occurrence of
+the comet.
+
+2. While the people have moved down into the valley next to the
+mountain as no flood of a similar magnitude has occurred, the comet's
+appearance is connected to stories of the flood. Several desperate
+actions lead to nothing, however, someone finds a falling star and
+bonds with the fire demon. No flood comes, and they claim credit. In
+return are made into the Sorcerer-King. They rule cruelly, and are
+eventually consumed by the fire demon, who rules through the
+Sorcerer-King for a time, before being forced to seek another
+host. There is chaos until a new leader can establish control, and the
+fire demon becomes the source of tales.
+
+3. Two major religions exist, a cult of the day and a cult of the
+night. The cult of the day claims the comet is a bringer of evil, and
+seek to prepare for it. The cult of the night believes that as the
+last comet brought evil (the fire demon, still out there somewhere),
+this one will bring good. This means it is a member of the cult of the
+day who reaches out to the stars and finds one of the type that offers
+to keep talking to you in return for services, and can occasionally
+manifest things. These stars are explicitly anti-humanity, instead of
+simply power-hungry like fire demons. As such, the two cults end up
+going to war. The cult of the night eventually wins by gaining an
+astronomancer who figures out which stars are safe to listen to, and
+gets the information they need.
+
+4. The fire demon acquires a new host and causes chaos. In the tense
+atmosphere of the comet's apperance, this leads to many things being
+blamed on the comet. The unified kingdom dissolves into many small
+city states, and the monarch simply rules the biggest one. The fire
+demon begins to consolidate power again.
+
+5. Present day. The fire demon is going to try to become the
+Sorcerer-King again (or, if it manages to take over the current ruler,
+Sorcerer-Queen)
+
+---
+
+You are the royal astronomancer. While your people know the stars and
+watch them, you have learned to listen to them as well. You are tasked
+to find out what they have to say that could help your people and your
+Queen.
+
+(Later:
+
+The master who came before you passed peacefully, but warned you that
+many of your calling did not meet so simple a fate. There are some
+stars who will make offers, and listen to you in return. To speak with
+them is fine, but any who accept their gifts, or their deals, is
+undertaking a grave risk.
+)
+
+## Information from your master:
+
+- Stars never lie. However, they actually don't see everything. The
+  dangerous ones have motivations.
+
+## Morning star (first star, demos UI. Then rest of stars fade in.):
+
+I have seen this comet pass through your sky time and time again, with
+[seven generations separating times]. At those times have come fires,
+a flood, wars and tyrants, the fall of a kingdom. Danger is at your
+doorstep once more.
+
+(about 12 stars?)
+
+## Star
+
+(visit 1)
+
+I once saw a flood at the time of the comet. A drought had left the
+land parched and hard, unable to absorb. The river had worn down its
+banks. The comet was no cause, but no-one could forget how it stood in
+the sky while houses sank, horses fled, and how the few survivors
+traveled on rafts until they reached the Mountain. Their children and
+their children's children feared the valley in case it flooded again,
+but younger generations told each other it was the comet's fault, and
+as it had not been seen again, the valley was safe.
+
+## Star
+
+(visit 1)
+
+Before any of your stories, there were kingdoms scattered like fallen
+leaves here. The flood that came when the comet did left so few, and
+washed away so much, that you became one people, who knew of little
+before the waters.
+
+## Star
+
+(visit 2)
+
+The first comet after the flood was a cause of panic. It seemed that
+the hubris of returning to the valley was about to lead to destruction
+by flood again. I saw the people reach out, desperate for anything to
+save them. One man found one of my cousins, falling towards him as he
+strove. Their lives joined, and the new Sorcerer-King told the fearful
+he had banished the waters and demanded their allegiance.
+
+## Star
+
+(visit 2)
+
+Beware the stars that fall to your world. The Sorcerer-King found one,
+and while the powers it wielded for him let him claim he had held the
+flood at bay when the comet came, it consumed him from the
+inside. When there was nothing left, the fallen star fled, to seek
+another it could inhabit, heedless of the collapsing monarchy it left
+behind.
+
+## Star
+
+(visit 3)
+
+When the Sorcerer-King was just a distant memory, there were those
+among you who looked to our home and asked for blessings of the
+night. They did not believe the dark sky would send the Sorcerer-King
+and his demon with one comet and not bring balance with another, so
+they did not fear its arrival. They were surprised when evil did
+arrive, in the form of their own neighbors who worshipped the bright
+day and feared the comet. But, they began to learn to listen to what
+we had to say, and as such we warned them of what was coming.
+
+## Star
+
+(visit 3)
+
+Tales of the Sorcerer-King's demon kept some frightened of the
+night. They whispered of how it waited in the wilderness for the lost
+and the desperate, and gave them fire, then laughed as it consumed
+them. They turned to the Sun and begged for help. If the comet had not
+destroyed them last time, they feared, it would at its next
+appearance. One among them, believing too little had been done, pushed
+through his fear and searched us for answers. With no-one else to talk
+to about it, he ignored our warnings and found one willing to say what
+he wanted to hear. It told him he could be strong, and those who
+followed the night were weak. All it truly wanted was death.
+
+## Star
+
+(visit 4)
+
+The fallen star knows the comet brings fear, even though the followers
+of the night prevailed against the day and all now learn to watch
+us. The vengeful one it made into a new sorcerer allowed it to disrupt
+the delicate calm that had settled since the war. In return, she
+taught it to feed on dynasties, not individuals.
+
+## Star
+
+(visit 4)
+
+? (maybe visit 4 just needs the one)
+
+## Star
+
+(visit 5, present)
+
+As this comet approaches, I see the Sorcerer-Dynasty 

@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Stars.gd" type="Script" id=1]
+[ext_resource path="res://Star.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Student.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/pleiades.jpg" type="Texture" id=5]
+
+[node name="Stars" type="CanvasLayer"]
+script = ExtResource( 1 )
+Student = ExtResource( 4 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="AlignmentImage" type="Sprite" parent="."]
+visible = false
+position = Vector2( 512.72, 342.24 )
+scale = Vector2( 1.27064, 1.27064 )
+texture = ExtResource( 5 )
+
+[node name="Star" parent="." instance=ExtResource( 2 )]
+position = Vector2( 431.335, 588.313 )
+rotation = 0.450092
+scale = Vector2( 0.68, 0.68 )
+message = "The first comet after the flood was a cause of panic. It seemed that the hubris of returning to the valley was about to lead to destruction by flood again. I saw the people reach out, desperate for anything to save them. One man found one of my cousins, falling towards him as he strove. Their lives joined, and the new Sorcerer-King told the fearful he had banished the waters and demanded their allegiance."
+
+[node name="Star2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 364.867, 168.292 )
+scale = Vector2( 0.68, 0.68 )
+
+[node name="Star3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 599.627, 164.049 )
+
+[node name="Star4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 486.489, 412.95 )
+
+[node name="Star5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 453.963, 206.475 )
+message = "Before any of your stories, there were kingdoms scattered like fallen leaves here. The flood that came when the comet did left so few, and washed away so much, that you became one people, who knew of little before the waters."
+
+[node name="Star6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 369.11, 207.89 )
+scale = Vector2( 0.68, 0.68 )
+
+[node name="Star7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 436.992, 117.38 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Star8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 390.324, 569.928 )
+rotation = 0.456069
+scale = Vector2( 0.68, 0.68 )
+
+[node name="Star9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 528.915, 114.551 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Star10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 605.283, 345.069 )
+message = "I once saw a flood at the time of the comet. A drought had left the
+land parched and hard, unable to absorb. The river had worn down its
+banks. The comet was no cause, but no-one could forget how it stood in
+the sky while houses sank, horses fled, and how the few survivors
+traveled on rafts until they reached the Mountain. Their children and
+their children's children feared the valley in case it flooded again,
+but younger generations told each other it was the comet's fault, and
+as it had not been seen again, the valley was safe."
+[connection signal="open_student" from="HUD" to="." method="_on_HUD_open_student"]
