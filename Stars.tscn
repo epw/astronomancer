@@ -25,8 +25,8 @@ scale = Vector2( 0.68, 0.68 )
 message = "The first comet after the flood was a cause of panic. It seemed that the hubris of returning to the valley was about to lead to destruction by flood again. I saw the people reach out, desperate for anything to save them. One man found one of my cousins, falling towards him as he strove. Their lives joined, and the new Sorcerer-King told the fearful he had banished the waters and demanded their allegiance."
 
 [node name="Star2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 364.867, 168.292 )
-scale = Vector2( 0.68, 0.68 )
+position = Vector2( 366.281, 178.191 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Star3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 599.627, 164.049 )
@@ -39,11 +39,11 @@ position = Vector2( 453.963, 206.475 )
 message = "Before any of your stories, there were kingdoms scattered like fallen leaves here. The flood that came when the comet did left so few, and washed away so much, that you became one people, who knew of little before the waters."
 
 [node name="Star6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 369.11, 207.89 )
-scale = Vector2( 0.68, 0.68 )
+position = Vector2( 369.11, 206.475 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Star7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 436.992, 117.38 )
+position = Vector2( 439.82, 127.279 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="Star8" parent="." instance=ExtResource( 2 )]
@@ -52,7 +52,7 @@ rotation = 0.456069
 scale = Vector2( 0.68, 0.68 )
 
 [node name="Star9" parent="." instance=ExtResource( 2 )]
-position = Vector2( 528.915, 114.551 )
+position = Vector2( 533.158, 113.137 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="Star10" parent="." instance=ExtResource( 2 )]

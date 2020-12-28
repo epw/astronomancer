@@ -18,6 +18,7 @@ func _ready():
 	highlight = Color.from_hsv(rng.randf(), 0.6, 1, 1)
 	
 	if get_parent():
+		#warning-ignore:return_value_discarded
 		connect("send_message", get_parent(), "_on_Star_send_message", [self])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
