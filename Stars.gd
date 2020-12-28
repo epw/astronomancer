@@ -1,12 +1,16 @@
 extends CanvasLayer
 
 export (PackedScene) var Student
+export (File) var message_file
 
 var obscured = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	load_messages()
+	for child in get_children():
+		if child.is_class("Star"):
+			pass
 
 func _process(_delta):
 	if Input.is_action_pressed("ui_cancel"):
@@ -14,6 +18,9 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		if not $HUD.message_has_mouse:
 			show_message("")
+
+func load_messages():
+	# Read in text file, break it on "~\n" lines, return as array. Will be assigned to stars (randomly?)
 
 func _on_Star_send_message(star):
 	if obscured:
