@@ -78,7 +78,7 @@ gddlg/StrictOptionAttributes=false
 [application]
 
 config/name="Constellations"
-run/main_scene="res://Stars.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
