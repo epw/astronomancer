@@ -7,4 +7,3 @@ func _ready():
 
 func _on_Star_send_message(star):
 	emit_signal("star_message", star.message)
-

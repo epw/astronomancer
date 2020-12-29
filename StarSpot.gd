@@ -12,6 +12,7 @@ var highlight = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	set_process_unhandled_input(true)
 	highlight = Color.from_hsv(randf(), 0.6, 1, 1)
 	
 	if get_parent():
@@ -33,3 +34,9 @@ func _on_StarSpot_mouse_entered():
 func _on_StarSpot_mouse_exited():
 	modulate = initial_modulation
 	pointed_at = false
+
+#func _input(event):
+#	print("Star Spot event: ", event)
+	
+#func _unhandled_input(event):
+#	print("Star Spot unhandled event: ", event)
