@@ -8,6 +8,9 @@ var message_has_mouse = false
 func _ready():
 	$HUD/StarMessage.rect_size = Vector2(1024, 128)
 	$HUD/StarMessage.rect_position = Vector2(0, 768 - $HUD/StarMessage.rect_size.y)
+#	$HUD/StarMessage.margin_left = 10
+#	$HUD/StarMessage.margin_right = 10
+#	$HUD/StarMessage.margin_bottom = 10
 	
 func _process(_delta):
 	if Input.is_action_pressed("ui_cancel"):

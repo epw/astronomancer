@@ -22,11 +22,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept") and pointed_at:
-		print("The star says: " + message)
 		emit_signal("send_message")
 
 func _on_StarSpot_mouse_entered():
-	print("Mouse entered start with message", message)
 #	modulate = Color(1, 1, .5, 1)
 	modulate = highlight
 	pointed_at = true
@@ -34,9 +32,3 @@ func _on_StarSpot_mouse_entered():
 func _on_StarSpot_mouse_exited():
 	modulate = initial_modulation
 	pointed_at = false
-
-#func _input(event):
-#	print("Star Spot event: ", event)
-	
-#func _unhandled_input(event):
-#	print("Star Spot unhandled event: ", event)
