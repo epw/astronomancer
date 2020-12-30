@@ -1,8 +1,10 @@
 extends Node2D
 
+export (PackedScene) var Menu
 export (PackedScene) var Student
 export (PackedScene) var Sunrise
 
+var current_menu = null
 var HUD
 var message_has_mouse = false
 
@@ -12,10 +14,11 @@ var knows_star_will_fall = false # Whether the player knows where a star will fa
 func _ready():
 	$HUD/StarMessage.rect_size = Vector2(1024, 128)
 	$HUD/StarMessage.rect_position = Vector2(0, 768 - $HUD/StarMessage.rect_size.y)
+	current_menu = $Menu
 	
 func _process(_delta):
 	if Input.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+		go_to_menu()
 	if Input.is_action_just_pressed("ui_accept"):
 		if not message_has_mouse:
 			show_message("")
@@ -74,3 +77,13 @@ func open_sunrise():
 
 func _on_SunriseButton_pressed():
 	open_sunrise()
+
+
+func _on_Menu_play():
+	$Menu.visible = false
+
+func go_to_menu():
+	$Menu.visible = true
+
+func _on_MenuButton_pressed():
+	go_to_menu()
