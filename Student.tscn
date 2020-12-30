@@ -28,10 +28,10 @@ margin_right = 1024.0
 margin_bottom = 768.0
 color = Color( 0.145098, 0.129412, 0.0196078, 1 )
 
-[node name="DialogHelper" parent="." instance=ExtResource( 5 )]
-
 [node name="DialogManager" parent="." instance=ExtResource( 1 )]
 dialog_file = "res://student.json"
+
+[node name="DialogHelper" parent="." instance=ExtResource( 5 )]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 light_mask = 2
@@ -51,7 +51,7 @@ bbcode_enabled = true
 bbcode_text = "<insert text here>"
 text = "<insert text here>"
 selection_enabled = true
-[connection signal="close" from="DialogHelper" to="." method="_on_DialogHelper_close"]
 [connection signal="dialog_finished" from="DialogManager" to="DialogHelper" method="_on_DialogManager_dialog_finished"]
 [connection signal="new_choice" from="DialogManager" to="DialogHelper" method="_on_DialogManager_new_choice"]
 [connection signal="new_speech" from="DialogManager" to="DialogHelper" method="_on_DialogManager_new_speech"]
+[connection signal="close" from="DialogHelper" to="." method="_on_DialogHelper_close"]
