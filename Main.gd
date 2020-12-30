@@ -1,6 +1,7 @@
 extends Node2D
 
 export (PackedScene) var Student
+export (PackedScene) var Sunrise
 
 var HUD
 var message_has_mouse = false
@@ -29,6 +30,9 @@ func _on_Sky_star_message(message):
 
 func _on_Student_close():
 	remove_child($Student)
+
+func _on_Sunrise_close():
+	get_tree().quit()
 
 func show_message(msg):
 	$HUD/StarMessage.scroll_to_line(0)
@@ -66,5 +70,8 @@ func open_student():
 func _on_StudentButton_pressed():
 	open_student()
 
+func open_sunrise():
+	start_dialog(Sunrise, "_on_Sunrise_close")
+
 func _on_SunriseButton_pressed():
-	print("Sunrise")
+	open_sunrise()
