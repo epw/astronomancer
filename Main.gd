@@ -27,13 +27,6 @@ func _process(_delta):
 func _on_Sky_star_message(message):
 	show_message(message)
 
-func open_student():
-	show_message("")
-	var student = Student.instance()
-	add_child(student)
-	student.rect_size = Vector2(1024, 768)
-	student.connect("close", self, "_on_Student_close")
-
 func _on_Student_close():
 	remove_child($Student)
 
@@ -48,9 +41,6 @@ func _on_StarMessage_mouse_entered():
 func _on_StarMessage_mouse_exited():
 	message_has_mouse = false
 
-func _on_StudentButton_pressed():
-	open_student()
-
 const pact_message = "[color=#ff7777]I am pleased you have accepted my bargain. See how the locusts descend already. You will allow great things to come to your world.[/color]"
 const no_pact_message = "[color=#ff4444]You disappoint me. May the comet bring all the terrors of your peoples' nightmares.[/color]"
 
@@ -62,3 +52,19 @@ func _on_StarMessage_meta_clicked(meta):
 	elif meta == "no":
 		pact_star.message = no_pact_message
 	pact_star.clicked()
+
+func start_dialog(dialog_cls, closing_signal):
+	show_message("")
+	var dialog = dialog_cls.instance()
+	add_child(dialog)
+	dialog.rect_size = Vector2(1024, 768)
+	dialog.connect("close", self, closing_signal)
+	
+func open_student():
+	start_dialog(Student, "_on_Student_close")
+
+func _on_StudentButton_pressed():
+	open_student()
+
+func _on_SunriseButton_pressed():
+	print("Sunrise")

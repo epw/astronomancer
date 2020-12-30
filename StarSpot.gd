@@ -17,6 +17,7 @@ func _process(_delta):
 		clicked()
 
 func _draw():
+	draw_arc(Vector2(0, 0), $CollisionShape2D.shape.radius, 0, PI * 2, 32, Color(1, 1, 1, .2), 1, true)
 	if pointed_at:
 		draw_circle(Vector2(0, 0), $CollisionShape2D.shape.radius, Color(1, 1, 1, .1))
 

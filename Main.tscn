@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sky.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/ilsscrp.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://assets/scroll-icon.png" type="Texture" id=5]
 [ext_resource path="res://assets/scroll-icon-pressed.png" type="Texture" id=6]
 [ext_resource path="res://assets/scroll-icon-hover.png" type="Texture" id=7]
+[ext_resource path="res://assets/sunrise-icon.png" type="Texture" id=8]
+[ext_resource path="res://assets/sunrise-icon-pressed.png" type="Texture" id=9]
+[ext_resource path="res://assets/sunrise-icon-hover.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -51,8 +54,21 @@ texture_hover = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SunriseButton" type="TextureButton" parent="."]
+margin_left = 950.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 66.6697
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="star_message" from="Sky" to="." method="_on_Sky_star_message"]
 [connection signal="meta_clicked" from="HUD/StarMessage" to="." method="_on_StarMessage_meta_clicked"]
 [connection signal="mouse_entered" from="HUD/StarMessage" to="." method="_on_StarMessage_mouse_entered"]
 [connection signal="mouse_exited" from="HUD/StarMessage" to="." method="_on_StarMessage_mouse_exited"]
 [connection signal="pressed" from="StudentButton" to="." method="_on_StudentButton_pressed"]
+[connection signal="pressed" from="SunriseButton" to="." method="_on_SunriseButton_pressed"]
