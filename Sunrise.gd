@@ -11,6 +11,7 @@ var last_basic_text
 var buttons = []
 
 var pact = false
+var knows_star_will_fall = false
 
 func _ready():
 	$SunriseDialogManager.start_dialog()

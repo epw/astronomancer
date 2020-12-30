@@ -4,6 +4,8 @@ signal send_message
 
 export(String, MULTILINE) var message = "Hello, world"
 
+export var will_fall = false # Will inform the player about the falling star
+
 var pointed_at = false
 
 func _ready():

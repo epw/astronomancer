@@ -6,7 +6,8 @@ export (PackedScene) var Sunrise
 var HUD
 var message_has_mouse = false
 
-var accepted_pact = false
+var accepted_pact = false # Whether the player accepted the star's pact
+var knows_star_will_fall = false # Whether the player knows where a star will fall
 
 func _ready():
 	$HUD/StarMessage.rect_size = Vector2(1024, 128)
@@ -25,7 +26,9 @@ func _process(_delta):
 #	if Input.is_action_just_pressed("ui_right"):
 #		open_student()
 
-func _on_Sky_star_message(message):
+func _on_Sky_star_message(message, will_fall):
+	if will_fall:
+		knows_star_will_fall = true
 	show_message(message)
 
 func _on_Student_close():
@@ -72,6 +75,7 @@ func _on_StudentButton_pressed():
 func open_sunrise():
 	var dialog = Sunrise.instance()
 	dialog.pact = accepted_pact
+	dialog.knows_star_will_fall = knows_star_will_fall
 	start_dialog(dialog, "_on_Sunrise_close")
 
 func _on_SunriseButton_pressed():
