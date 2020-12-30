@@ -62,6 +62,7 @@ margin_left = 950.0
 margin_top = 10.0
 margin_right = 1014.0
 margin_bottom = 66.6697
+hint_tooltip = "Wait for Sunrise (end of game)"
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 10 )

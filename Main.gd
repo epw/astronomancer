@@ -57,7 +57,7 @@ func _on_StarMessage_meta_clicked(meta):
 func start_dialog(dialog, closing_signal):
 	show_message("")
 	add_child(dialog)
-	dialog.rect_size = Vector2(1024, 768)
+	dialog.resize()
 	dialog.connect("close", self, closing_signal)
 	
 func open_student():
