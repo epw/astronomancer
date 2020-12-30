@@ -5,11 +5,11 @@
 [ext_resource path="res://Sky.gd" type="Script" id=3]
 [ext_resource path="res://StarViewportCanvasLayer.gd" type="Script" id=6]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 22.2725
-
 [sub_resource type="CircleShape2D" id=9]
 radius = 14.0391
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 22.2725
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 21.7046
@@ -59,18 +59,23 @@ script = ExtResource( 6 )
 
 [node name="Stars" type="Node2D" parent="."]
 
-[node name="StarSpot" parent="Stars" instance=ExtResource( 2 )]
-position = Vector2( 602.01, 165.229 )
-
-[node name="CollisionShape2D" parent="Stars/StarSpot" index="0"]
-shape = SubResource( 1 )
-
 [node name="MorningStar2" parent="Stars" instance=ExtResource( 2 )]
 position = Vector2( 531.454, 122.477 )
 message = "I have seen this comet pass through your sky time and time again, with a grandmother's grandmother's life passing between returns. At those times have come fires, a flood, wars and tyrants, the fall of a kingdom. Danger is at your doorstep once more."
 
 [node name="CollisionShape2D" parent="Stars/MorningStar2" index="0"]
 shape = SubResource( 9 )
+
+[node name="PactStarSpot" parent="Stars" instance=ExtResource( 2 )]
+position = Vector2( 601.414, 165.031 )
+message = "[color=#ff7777]Hello, human. You found me. I see you watching me, listening. I offer more than the others in the sky. Not just information, but power. If you wish, I shall let you direct where I should bring my influence. You will owe me, once the comet has departed, a payment worthy of the stars.
+
+What do you say?
+
+[url=yes]Yes[/url] [url=no]No[/url][/color]"
+
+[node name="CollisionShape2D" parent="Stars/PactStarSpot" index="0"]
+shape = SubResource( 1 )
 
 [node name="StarSpot2" parent="Stars" instance=ExtResource( 2 )]
 position = Vector2( 450.979, 204.325 )
@@ -134,9 +139,9 @@ position = Vector2( 513.359, 386.08 )
 texture = SubResource( 3 )
 mode = 3
 
-[editable path="Stars/StarSpot"]
-
 [editable path="Stars/MorningStar2"]
+
+[editable path="Stars/PactStarSpot"]
 
 [editable path="Stars/StarSpot2"]
 

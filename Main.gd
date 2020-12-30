@@ -5,6 +5,8 @@ export (PackedScene) var Student
 var HUD
 var message_has_mouse = false
 
+var accepted_pact = false
+
 func _ready():
 	$HUD/StarMessage.rect_size = Vector2(1024, 128)
 	$HUD/StarMessage.rect_position = Vector2(0, 768 - $HUD/StarMessage.rect_size.y)
@@ -19,15 +21,13 @@ func _process(_delta):
 		if not message_has_mouse:
 			show_message("")
 
-	if Input.is_action_just_pressed("ui_right"):
-		open_student()
+#	if Input.is_action_just_pressed("ui_right"):
+#		open_student()
 
 func _on_Sky_star_message(message):
-	print("_on_Star_send_message", message)
 	show_message(message)
 
 func open_student():
-	print("_on_HUD_open_student")
 	show_message("")
 	var student = Student.instance()
 	add_child(student)
@@ -35,7 +35,6 @@ func open_student():
 	student.connect("close", self, "_on_Student_close")
 
 func _on_Student_close():
-	print("_on_Student_close")
 	remove_child($Student)
 
 func show_message(msg):
@@ -48,3 +47,18 @@ func _on_StarMessage_mouse_entered():
 
 func _on_StarMessage_mouse_exited():
 	message_has_mouse = false
+
+func _on_StudentButton_pressed():
+	open_student()
+
+const pact_message = "[color=#ff7777]I am pleased you have accepted my bargain. See how the locusts descend already. You will allow great things to come to your world.[/color]"
+const no_pact_message = "[color=#ff4444]You disappoint me. May the comet bring all the terrors of your peoples' nightmares.[/color]"
+
+func _on_StarMessage_meta_clicked(meta):
+	var pact_star = $Sky/Stars/PactStarSpot
+	if meta == "yes":
+		accepted_pact = true
+		pact_star.message = pact_message
+	elif meta == "no":
+		pact_star.message = no_pact_message
+	pact_star.clicked()

@@ -7,7 +7,7 @@ extends Node2D
 # then draws a fully-transparent circle at every star, using the radius of the
 # collision circle that detects clicks on the star.
 func _draw():
-	draw_rect(Rect2(0, 0, 1024, 768), Color(1, 1, 1, .90))
+	draw_rect(Rect2(0, 0, 1024, 768), Color(1, 1, 1, 1))
 	for star in get_node("../../Stars").get_children():
 		draw_circle(star.position, star.get_node("CollisionShape2D").shape.radius,
 				Color(1, 1, 1, 1))
