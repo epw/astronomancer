@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://StudentDialogManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Student.gd" type="Script" id=2]
 [ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://DialogueButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://DialogHelper.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -27,7 +28,9 @@ margin_right = 1024.0
 margin_bottom = 768.0
 color = Color( 0.145098, 0.129412, 0.0196078, 1 )
 
-[node name="StudentDialogManager" parent="." instance=ExtResource( 1 )]
+[node name="DialogHelper" parent="." instance=ExtResource( 5 )]
+
+[node name="DialogManager" parent="." instance=ExtResource( 1 )]
 dialog_file = "res://student.json"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -37,8 +40,6 @@ margin_bottom = 768.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 light_mask = 2
-margin_left = 10.0
-margin_top = 10.0
 margin_right = 1024.0
 margin_bottom = 768.0
 focus_mode = 2
@@ -50,6 +51,7 @@ bbcode_enabled = true
 bbcode_text = "<insert text here>"
 text = "<insert text here>"
 selection_enabled = true
-[connection signal="dialog_finished" from="StudentDialogManager" to="." method="_on_StudentDialogManager_dialog_finished"]
-[connection signal="new_choice" from="StudentDialogManager" to="." method="_on_StudentDialogManager_new_choice"]
-[connection signal="new_speech" from="StudentDialogManager" to="." method="_on_StudentDialogManager_new_speech"]
+[connection signal="close" from="DialogHelper" to="." method="_on_DialogHelper_close"]
+[connection signal="dialog_finished" from="DialogManager" to="DialogHelper" method="_on_DialogManager_dialog_finished"]
+[connection signal="new_choice" from="DialogManager" to="DialogHelper" method="_on_DialogManager_new_choice"]
+[connection signal="new_speech" from="DialogManager" to="DialogHelper" method="_on_DialogManager_new_speech"]
