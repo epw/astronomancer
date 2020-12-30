@@ -57,21 +57,22 @@ func _on_StarMessage_meta_clicked(meta):
 		pact_star.message = no_pact_message
 	pact_star.clicked()
 
-func start_dialog(dialog_cls, closing_signal):
+func start_dialog(dialog, closing_signal):
 	show_message("")
-	var dialog = dialog_cls.instance()
 	add_child(dialog)
 	dialog.rect_size = Vector2(1024, 768)
 	dialog.connect("close", self, closing_signal)
 	
 func open_student():
-	start_dialog(Student, "_on_Student_close")
+	start_dialog(Student.instance(), "_on_Student_close")
 
 func _on_StudentButton_pressed():
 	open_student()
 
 func open_sunrise():
-	start_dialog(Sunrise, "_on_Sunrise_close")
+	var dialog = Sunrise.instance()
+	dialog.pact = accepted_pact
+	start_dialog(dialog, "_on_Sunrise_close")
 
 func _on_SunriseButton_pressed():
 	open_sunrise()

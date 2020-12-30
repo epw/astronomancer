@@ -10,6 +10,7 @@ var mode = MODE.SIMPLE
 var last_basic_text
 var buttons = []
 
+var pact = false
 
 func _ready():
 	$SunriseDialogManager.start_dialog()
