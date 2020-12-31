@@ -88,10 +88,11 @@ func _on_MenuButton_pressed():
 
 
 func _on_Menu_setting_change(setting, state):
-	print("Changing setting " + setting + " to ", state)
+#	print("Changing setting " + setting + " to ", state)
+	if setting == "sound":
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not state)
 	if setting == "cursive":
 		$HUD/StarMessage.add_font_override("normal_font", load("res://assets/StandardFont.tres") if state == false else null)
-
 
 func _on_Sky_clear_message():
 	show_message("")
