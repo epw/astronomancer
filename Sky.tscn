@@ -161,6 +161,9 @@ message = "When the Sorcerer-King was just a distant memory, there were those am
 light_mask = 2
 shape = SubResource( 7 )
 
+[node name="AudioStreamPlayer" parent="Stars/StarSpot7" index="1"]
+stream = ExtResource( 5 )
+
 [node name="StarSpot9" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
 position = Vector2( 423.957, 84.1334 )
