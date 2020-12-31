@@ -5,13 +5,13 @@
 [ext_resource path="res://Sky.gd" type="Script" id=3]
 [ext_resource path="res://StarViewportCanvasLayer.gd" type="Script" id=6]
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=1]
 radius = 33.426
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 22.2725
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=3]
 radius = 26.1186
 
 [sub_resource type="CircleShape2D" id=4]
@@ -20,19 +20,19 @@ radius = 18.0556
 [sub_resource type="CircleShape2D" id=5]
 radius = 25.1372
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=6]
 radius = 13.4915
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=7]
 radius = 10.7961
 
-[sub_resource type="CircleShape2D" id=10]
+[sub_resource type="CircleShape2D" id=8]
 radius = 27.7421
 
-[sub_resource type="CircleShape2D" id=11]
+[sub_resource type="CircleShape2D" id=9]
 radius = 20.4965
 
-[sub_resource type="ViewportTexture" id=3]
+[sub_resource type="ViewportTexture" id=10]
 viewport_path = NodePath("StarViewport")
 
 [node name="Sky" type="Node2D"]
@@ -61,7 +61,7 @@ position = Vector2( 564.065, 262.721 )
 message = "I have seen this comet pass through your sky time and time again, with a grandmother's grandmother's life passing between returns. At those times have come fires, a flood, wars and tyrants, the fall of a kingdom. Danger is at your doorstep once more."
 
 [node name="CollisionShape2D" parent="Stars/MorningStar2" index="0"]
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 
 [node name="PactStarSpot" parent="Stars" instance=ExtResource( 2 )]
 position = Vector2( 564.779, 443.174 )
@@ -70,14 +70,14 @@ What do you say?
 [url=yes]Yes[/url] [url=no]No[/url][/color]"
 
 [node name="CollisionShape2D" parent="Stars/PactStarSpot" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StarSpot2" parent="Stars" instance=ExtResource( 2 )]
 position = Vector2( 747.005, 561.006 )
 message = "Before any of your stories, there were kingdoms scattered like fallen leaves here. The flood that came when the comet did left so few, and washed away so much, that you became one people, who knew of little before the waters."
 
 [node name="CollisionShape2D" parent="Stars/StarSpot2" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="StarSpot3" parent="Stars" instance=ExtResource( 2 )]
 position = Vector2( 902.497, 415.619 )
@@ -103,33 +103,33 @@ position = Vector2( 898.352, 308.968 )
 message = "Tales of the Sorcerer-King's demon kept some frightened of the night. They whispered of how it waited in the wilderness for the lost and the desperate, and gave them fire, then laughed as it consumed them. They turned to the Sun and begged for help. If the comet had not destroyed them last time, they feared, it would at its next appearance. One among them, believing too little had been done, pushed through his fear and searched us for answers. With no-one else to talk to about it, he ignored our warnings and found one willing to say what he wanted to hear. It told him he could be strong, and those who followed the night were weak. All it truly wanted was death."
 
 [node name="CollisionShape2D" parent="Stars/StarSpot6" index="0"]
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="StarSpot7" parent="Stars" instance=ExtResource( 2 )]
 position = Vector2( 875.518, 300.665 )
 message = "When the Sorcerer-King was just a distant memory, there were those among you who looked to our home and asked for blessings of the night. They did not believe the dark sky would send the Sorcerer-King and his demon with one comet and not bring balance with another, so they did not fear its arrival. They were surprised when evil did arrive, in the form of their own neighbors who worshipped the bright day and feared the comet. But, they began to learn to listen to what we had to say, and as such we warned them of what was coming."
 
 [node name="CollisionShape2D" parent="Stars/StarSpot7" index="0"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="StarSpot9" parent="Stars" instance=ExtResource( 2 )]
 position = Vector2( 423.957, 84.1334 )
 message = "Beware the stars that fall to your world. The Sorcerer-King found one, and while the powers it wielded for him let him claim he had held the flood at bay when the comet came, it consumed him from the inside. When there was nothing left, the fallen star fled, to seek another it could inhabit, heedless of the collapsing kingdom it left behind."
 
 [node name="CollisionShape2D" parent="Stars/StarSpot9" index="0"]
-shape = SubResource( 10 )
+shape = SubResource( 8 )
 
 [node name="StarSpot10" parent="Stars" instance=ExtResource( 2 )]
 position = Vector2( 464.126, 56.7011 )
 message = "The first comet after the flood was a cause of panic. It seemed that the hubris of returning to the valley was about to lead to destruction by flood again. I saw the people reach out, desperate for anything to save them. One man found one of my cousins, falling towards him as he strove. Their lives joined, and the new Sorcerer-King told the fearful he had banished the waters and demanded their allegiance."
 
 [node name="CollisionShape2D" parent="Stars/StarSpot10" index="0"]
-shape = SubResource( 11 )
+shape = SubResource( 9 )
 
 [node name="StarMask" type="Light2D" parent="."]
 visible = false
 position = Vector2( 513.359, 386.08 )
-texture = SubResource( 3 )
+texture = SubResource( 10 )
 mode = 3
 
 [editable path="Stars/MorningStar2"]

@@ -87,3 +87,9 @@ func go_to_menu():
 
 func _on_MenuButton_pressed():
 	go_to_menu()
+
+
+func _on_Menu_setting_change(setting, state):
+	print("Changing setting " + setting + " to ", state)
+	if setting == "cursive":
+		$HUD/StarMessage.add_font_override("normal_font", load("res://assets/StandardFont.tres") if state == false else null)

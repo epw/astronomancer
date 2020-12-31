@@ -1,14 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://SunriseDialogManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sunrise.gd" type="Script" id=2]
-[ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/StandardFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://DialogueButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://DialogHelper.tscn" type="PackedScene" id=5]
-
-[sub_resource type="DynamicFont" id=1]
-size = 32
-font_data = ExtResource( 3 )
 
 [node name="Sunrise" type="MarginContainer"]
 light_mask = -2147483646
@@ -44,7 +40,7 @@ margin_bottom = 768.0
 focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = ExtResource( 3 )
 custom_colors/default_color = Color( 0.227451, 0.239216, 0.184314, 1 )
 bbcode_enabled = true
 bbcode_text = "<insert text here>"
