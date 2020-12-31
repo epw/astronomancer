@@ -84,6 +84,11 @@ __meta__ = {
 
 [node name="SettingsMenu" parent="." instance=ExtResource( 4 )]
 visible = false
+
+[node name="ExtraSky" type="ColorRect" parent="."]
+margin_top = -768.0
+margin_right = 1024.0
+color = Color( 0.00392157, 0.156863, 0.282353, 1 )
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
