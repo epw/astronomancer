@@ -6,6 +6,8 @@ export(String, MULTILINE) var message = "Hello, world"
 
 export var will_fall = false # Will inform the player about the falling star
 
+export var show_circle = true
+
 var pointed_at = false
 
 func _ready():
@@ -19,13 +21,16 @@ func _process(_delta):
 		clicked()
 
 func _draw():
-	draw_arc(Vector2(0, 0), $CollisionShape2D.shape.radius, 0, PI * 2, 32, Color(1, 1, 1, .2), 1, true)
+	if show_circle:
+		draw_arc(Vector2(0, 0), $CollisionShape2D.shape.radius, 0, PI * 2, 32, Color(1, 1, 1, .2), 1, true)
 	if pointed_at:
 		draw_circle(Vector2(0, 0), $CollisionShape2D.shape.radius, Color(1, 1, 1, .1))
 
 func _on_StarSpot_mouse_entered():
 	pointed_at = true
 	update()
+	$AudioStreamPlayer.play(0)
+	
 
 func _on_StarSpot_mouse_exited():
 	pointed_at = false

@@ -100,6 +100,7 @@ __meta__ = {
 }
 
 [node name="EveningStarSpot" parent="." instance=ExtResource( 6 )]
+show_circle = false
 
 [node name="CollisionShape2D" parent="EveningStarSpot" index="0"]
 shape = SubResource( 2 )

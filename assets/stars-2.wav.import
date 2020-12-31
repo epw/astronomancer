@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stars-2.wav-5aa8c3132f30b3f79cd0569380cbe0ae.sample"
+
+[deps]
+
+source_file="res://assets/stars-2.wav"
+dest_files=[ "res://.import/stars-2.wav-5aa8c3132f30b3f79cd0569380cbe0ae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

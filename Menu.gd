@@ -23,7 +23,8 @@ func _input(event):
 							  $EveningStarSpot.position.y + SLIDE_Y)
 
 			if event.position.distance_to(pos) < $EveningStarSpot/CollisionShape2D.shape.radius:
-				$EveningStarSpot._on_StarSpot_mouse_entered()
+				if not $EveningStarSpot.pointed_at:
+					$EveningStarSpot._on_StarSpot_mouse_entered()
 			else:
 				$EveningStarSpot._on_StarSpot_mouse_exited()
 

@@ -15,16 +15,9 @@ func _process(_delta):
 		if message_shown and not message_has_mouse:
 			emit_signal("clear_message")
 
-func morning_only():
-	return false
-#	return $StarViewport/CanvasLayer.morning_only
-
 func _on_Star_send_message(star):
-	if morning_only() and star != $Stars/MorningStar:
-		return
 	message_shown = true
 	emit_signal("star_message", star.message, star.will_fall)
 
 func cleared_message():
-	$StarViewport/CanvasLayer.morning_only = false
 	$StarViewport/CanvasLayer.update()

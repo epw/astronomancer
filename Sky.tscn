@@ -1,9 +1,15 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/pleiades_wiki.jpg" type="Texture" id=1]
 [ext_resource path="res://StarSpot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sky.gd" type="Script" id=3]
+[ext_resource path="res://assets/stars-3.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/stars-2.wav" type="AudioStream" id=5]
 [ext_resource path="res://StarViewportCanvasLayer.gd" type="Script" id=6]
+[ext_resource path="res://assets/stars-5.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/stars-4.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/stars-6.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/stars-7.wav" type="AudioStream" id=10]
 
 [sub_resource type="CircleShape2D" id=11]
 radius = 33.426
@@ -82,6 +88,9 @@ What do you say?
 light_mask = 2
 shape = SubResource( 12 )
 
+[node name="AudioStreamPlayer" parent="Stars/PactStarSpot" index="1"]
+stream = ExtResource( 5 )
+
 [node name="StarSpot2" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
 position = Vector2( 747.005, 561.006 )
@@ -90,6 +99,9 @@ message = "Before any of your stories, there were kingdoms scattered like fallen
 [node name="CollisionShape2D" parent="Stars/StarSpot2" index="0"]
 light_mask = 2
 shape = SubResource( 13 )
+
+[node name="AudioStreamPlayer" parent="Stars/StarSpot2" index="1"]
+stream = ExtResource( 4 )
 
 [node name="StarSpot3" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
@@ -100,6 +112,9 @@ message = "I once saw a flood at the time of the comet. A drought had left the l
 light_mask = 2
 shape = SubResource( 4 )
 
+[node name="AudioStreamPlayer" parent="Stars/StarSpot3" index="1"]
+stream = ExtResource( 8 )
+
 [node name="StarSpot4" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
 position = Vector2( 810.142, 374.631 )
@@ -108,6 +123,9 @@ message = "Tales of the Sorcerer-King's demon kept some frightened of the night.
 [node name="CollisionShape2D" parent="Stars/StarSpot4" index="0"]
 light_mask = 2
 shape = SubResource( 5 )
+
+[node name="AudioStreamPlayer" parent="Stars/StarSpot4" index="1"]
+stream = ExtResource( 7 )
 
 [node name="StarWillFallSpot5" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
@@ -119,6 +137,9 @@ will_fall = true
 light_mask = 2
 shape = SubResource( 14 )
 
+[node name="AudioStreamPlayer" parent="Stars/StarWillFallSpot5" index="1"]
+stream = ExtResource( 9 )
+
 [node name="StarSpot6" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
 position = Vector2( 898.352, 308.968 )
@@ -127,6 +148,9 @@ message = "Tales of the Sorcerer-King's demon kept some frightened of the night.
 [node name="CollisionShape2D" parent="Stars/StarSpot6" index="0"]
 light_mask = 2
 shape = SubResource( 6 )
+
+[node name="AudioStreamPlayer" parent="Stars/StarSpot6" index="1"]
+stream = ExtResource( 10 )
 
 [node name="StarSpot7" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
@@ -146,6 +170,9 @@ message = "Beware the stars that fall to your world. The Sorcerer-King found one
 light_mask = 2
 shape = SubResource( 8 )
 
+[node name="AudioStreamPlayer" parent="Stars/StarSpot9" index="1"]
+stream = ExtResource( 5 )
+
 [node name="StarSpot10" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
 position = Vector2( 464.126, 56.7011 )
@@ -154,6 +181,9 @@ message = "The first comet after the flood was a cause of panic. It seemed that 
 [node name="CollisionShape2D" parent="Stars/StarSpot10" index="0"]
 light_mask = 2
 shape = SubResource( 9 )
+
+[node name="AudioStreamPlayer" parent="Stars/StarSpot10" index="1"]
+stream = ExtResource( 7 )
 
 [node name="StarMask" type="Light2D" parent="."]
 visible = false
