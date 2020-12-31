@@ -79,7 +79,7 @@ gddlg/StrictOptionAttributes=false
 
 config/name="Constellations"
 run/main_scene="res://Main.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/eveningstar.png"
 
 [autoload]
 
