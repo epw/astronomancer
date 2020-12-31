@@ -15,8 +15,6 @@ var buttons = []
 
 func _ready():
 	dialog_scene = get_parent()
-	print(dialog_scene)
-	print(dialog_scene.get_node("DialogManager"))
 #	dialog_scene.get_node("DialogManager").start_dialog("")
 
 func resize():
@@ -28,7 +26,6 @@ func continue_dialog():
 	dialog_scene.get_node("DialogManager").continue_dialog()
 
 func _on_DialogManager_dialog_finished():
-	print("Dialog ended")
 	if dialog_scene.get_parent().is_class("Viewport"): # When node is run directly from editor
 		get_tree().quit()
 		return
@@ -44,7 +41,6 @@ func add_button(text, callback, data):
 
 func _on_DialogManager_new_speech(speech_codes):
 	mode = MODE.SIMPLE
-	print(speech_codes)
 	var text = PoolStringArray(speech_codes).join("\n\n")
 	dialog_scene.get_node("VBoxContainer/RichTextLabel").bbcode_text = text
 	last_basic_text = text
@@ -52,7 +48,6 @@ func _on_DialogManager_new_speech(speech_codes):
 
 func _on_DialogManager_new_choice(choices):
 	mode = MODE.CHOICE
-	print("Offering choice")
 	dialog_scene.get_node("VBoxContainer/RichTextLabel").bbcode_text = last_basic_text
 	for c in range(choices.size()):
 		add_button(choices[c], "_on_Button_pressed", [c])
@@ -65,5 +60,4 @@ func clear_buttons():
 
 func _on_Button_pressed(choice):
 	clear_buttons()
-	print(choice)
 	dialog_scene.get_node("DialogManager").choice_picked(choice)
