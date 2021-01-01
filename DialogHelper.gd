@@ -44,7 +44,7 @@ func _on_DialogManager_new_speech(speech_codes):
 	var text = PoolStringArray(speech_codes).join("\n\n")
 	dialog_scene.get_node("VBoxContainer/RichTextLabel").bbcode_text = text
 	last_basic_text = text
-	add_button("(Click anywhere to continue)", "continue_dialog", [])
+	add_button("(Click to continue)", "continue_dialog", [])
 
 func _on_DialogManager_new_choice(choices):
 	mode = MODE.CHOICE

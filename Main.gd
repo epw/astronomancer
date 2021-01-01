@@ -17,6 +17,7 @@ func _ready():
 	
 	load_config()
 	
+	
 func _process(_delta):
 	if Input.is_action_pressed("ui_cancel"):
 		go_to_menu()

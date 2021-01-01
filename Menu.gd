@@ -16,6 +16,10 @@ const SLIDE_Y = 400
 var first_time = true
 var message_shown = false
 
+func _ready():
+	if OS.get_name() == "HTML5":
+		$VBoxContainer/QuitButton.queue_free()
+
 func _input(event):
 	if fade_state == FADE_STATES.EVENING:
 		if event is InputEventMouse:
