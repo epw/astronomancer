@@ -20,6 +20,11 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept") and pointed_at:
 		clicked()
 
+func _unhandled_input(event):
+	if event is InputEventScreenTouch:
+		if event.pressed and event.position.distance_to(position) <= $CollisionShape2D.shape.radius:
+			clicked()
+
 func _draw():
 	if show_circle:
 		draw_arc(Vector2(0, 0), $CollisionShape2D.shape.radius, 0, PI * 2, 32, Color(1, 1, 1, .2), 1, true)

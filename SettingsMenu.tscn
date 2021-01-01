@@ -41,7 +41,7 @@ custom_fonts/font = ExtResource( 2 )
 pressed = true
 text = "Sound Effects"
 
-[node name="NoCursiveCheckButton" type="CheckButton" parent="VBoxContainer"]
+[node name="CursiveCheckButton" type="CheckButton" parent="VBoxContainer"]
 margin_top = 87.0
 margin_right = 406.0
 margin_bottom = 134.0
@@ -57,5 +57,5 @@ custom_fonts/font = ExtResource( 2 )
 text = "Back"
 align = 0
 [connection signal="toggled" from="VBoxContainer/SoundCheckButton" to="." method="_on_SoundCheckButton_toggled"]
-[connection signal="toggled" from="VBoxContainer/NoCursiveCheckButton" to="." method="_on_NoCursiveCheckButton_toggled"]
+[connection signal="toggled" from="VBoxContainer/CursiveCheckButton" to="." method="_on_CursiveCheckButton_toggled"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

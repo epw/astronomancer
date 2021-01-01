@@ -77,7 +77,7 @@ gddlg/StrictOptionAttributes=false
 
 [application]
 
-config/name="Constellations"
+config/name="Astronomancer"
 run/main_scene="res://Main.tscn"
 config/icon="res://assets/eveningstar.png"
 

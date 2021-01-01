@@ -25,6 +25,10 @@ func _input(event):
 			if event.position.distance_to(pos) < $EveningStarSpot/CollisionShape2D.shape.radius:
 				if not $EveningStarSpot.pointed_at:
 					$EveningStarSpot._on_StarSpot_mouse_entered()
+					if event is InputEventMouseButton:
+						if event.pressed == true and event.button_index == BUTTON_LEFT:
+							$EveningStarSpot.clicked()
+							fade_state = FADE_STATES.SKY
 			else:
 				$EveningStarSpot._on_StarSpot_mouse_exited()
 

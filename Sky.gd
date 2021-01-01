@@ -17,7 +17,7 @@ func _process(_delta):
 
 func _on_Star_send_message(star):
 	message_shown = true
-	emit_signal("star_message", star.message, star.will_fall)
+	emit_signal("star_message", star.message, star.will_fall, star == $Stars/PactStarSpot)
 
 func cleared_message():
 	$StarViewport/CanvasLayer.update()

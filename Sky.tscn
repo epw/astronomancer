@@ -11,13 +11,13 @@
 [ext_resource path="res://assets/stars-6.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/stars-7.wav" type="AudioStream" id=10]
 
-[sub_resource type="CircleShape2D" id=11]
+[sub_resource type="CircleShape2D" id=1]
 radius = 33.426
 
-[sub_resource type="CircleShape2D" id=12]
+[sub_resource type="CircleShape2D" id=2]
 radius = 22.2725
 
-[sub_resource type="CircleShape2D" id=13]
+[sub_resource type="CircleShape2D" id=3]
 radius = 26.1186
 
 [sub_resource type="CircleShape2D" id=4]
@@ -26,22 +26,22 @@ radius = 18.0556
 [sub_resource type="CircleShape2D" id=5]
 radius = 25.1372
 
-[sub_resource type="CircleShape2D" id=14]
+[sub_resource type="CircleShape2D" id=6]
 radius = 20.0
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=7]
 radius = 13.4915
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=8]
 radius = 10.7961
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=9]
 radius = 27.7421
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=10]
 radius = 20.4965
 
-[sub_resource type="ViewportTexture" id=10]
+[sub_resource type="ViewportTexture" id=11]
 viewport_path = NodePath("StarViewport")
 
 [node name="Sky" type="Node2D"]
@@ -75,18 +75,18 @@ message = "I have seen this comet pass through your sky time and time again, wit
 
 [node name="CollisionShape2D" parent="Stars/MorningStar" index="0"]
 light_mask = 2
-shape = SubResource( 11 )
+shape = SubResource( 1 )
 
 [node name="PactStarSpot" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
 position = Vector2( 564.779, 443.174 )
 message = "[color=#ff7777]Hello, human. You found me. I see you watching me, listening. I offer more than the others in the sky. Not just information, but power. If you wish, I shall let you direct where I should bring my influence. You will owe me, once the comet has departed, a payment worthy of the stars.
 What do you say?
-[url=yes]Yes[/url] [url=no]No[/url][/color]"
+[url=yes]Yes[/url]      [url=no]No[/url][/color]"
 
 [node name="CollisionShape2D" parent="Stars/PactStarSpot" index="0"]
 light_mask = 2
-shape = SubResource( 12 )
+shape = SubResource( 2 )
 
 [node name="AudioStreamPlayer" parent="Stars/PactStarSpot" index="1"]
 stream = ExtResource( 5 )
@@ -98,7 +98,7 @@ message = "Before any of your stories, there were kingdoms scattered like fallen
 
 [node name="CollisionShape2D" parent="Stars/StarSpot2" index="0"]
 light_mask = 2
-shape = SubResource( 13 )
+shape = SubResource( 3 )
 
 [node name="AudioStreamPlayer" parent="Stars/StarSpot2" index="1"]
 stream = ExtResource( 4 )
@@ -135,7 +135,7 @@ will_fall = true
 
 [node name="CollisionShape2D" parent="Stars/StarWillFallSpot5" index="0"]
 light_mask = 2
-shape = SubResource( 14 )
+shape = SubResource( 6 )
 
 [node name="AudioStreamPlayer" parent="Stars/StarWillFallSpot5" index="1"]
 stream = ExtResource( 9 )
@@ -147,7 +147,7 @@ message = "Tales of the Sorcerer-King's demon kept some frightened of the night.
 
 [node name="CollisionShape2D" parent="Stars/StarSpot6" index="0"]
 light_mask = 2
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="AudioStreamPlayer" parent="Stars/StarSpot6" index="1"]
 stream = ExtResource( 10 )
@@ -159,7 +159,7 @@ message = "When the Sorcerer-King was just a distant memory, there were those am
 
 [node name="CollisionShape2D" parent="Stars/StarSpot7" index="0"]
 light_mask = 2
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="AudioStreamPlayer" parent="Stars/StarSpot7" index="1"]
 stream = ExtResource( 5 )
@@ -171,7 +171,7 @@ message = "Beware the stars that fall to your world. The Sorcerer-King found one
 
 [node name="CollisionShape2D" parent="Stars/StarSpot9" index="0"]
 light_mask = 2
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="AudioStreamPlayer" parent="Stars/StarSpot9" index="1"]
 stream = ExtResource( 5 )
@@ -183,7 +183,7 @@ message = "The first comet after the flood was a cause of panic. It seemed that 
 
 [node name="CollisionShape2D" parent="Stars/StarSpot10" index="0"]
 light_mask = 2
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="AudioStreamPlayer" parent="Stars/StarSpot10" index="1"]
 stream = ExtResource( 7 )
@@ -192,7 +192,7 @@ stream = ExtResource( 7 )
 visible = false
 light_mask = 2
 position = Vector2( 512, 384 )
-texture = SubResource( 10 )
+texture = SubResource( 11 )
 mode = 3
 range_item_cull_mask = 2
 shadow_item_cull_mask = 2
