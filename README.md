@@ -1,7 +1,7 @@
 # Astronomancer
 
 This is a little game I made, using the Godot engine. It is playable
-at https://epw.itch.io/astronomancer .
+at https://epw.itch.io/astronomancer.
 
 ## License
 
