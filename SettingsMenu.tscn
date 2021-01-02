@@ -47,16 +47,26 @@ margin_right = 406.0
 margin_bottom = 134.0
 custom_fonts/font = ExtResource( 2 )
 pressed = true
-text = "Cursive fonts"
+text = "Cursive Fonts"
+
+[node name="DecisionCheckButton" type="CheckButton" parent="VBoxContainer"]
+margin_top = 174.0
+margin_right = 406.0
+margin_bottom = 221.0
+hint_tooltip = "Pop up yes/no buttons where appropriate. Turn this on if you can't select \"yes\" or \"no\" when prompted in red text."
+custom_fonts/font = ExtResource( 2 )
+pressed = true
+text = "Decision Helper"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
-margin_top = 174.0
+margin_top = 261.0
 margin_right = 93.0
-margin_bottom = 219.0
+margin_bottom = 306.0
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 2 )
 text = "Back"
 align = 0
 [connection signal="toggled" from="VBoxContainer/SoundCheckButton" to="." method="_on_SoundCheckButton_toggled"]
 [connection signal="toggled" from="VBoxContainer/CursiveCheckButton" to="." method="_on_CursiveCheckButton_toggled"]
+[connection signal="toggled" from="VBoxContainer/DecisionCheckButton" to="." method="_on_DecisionCheckButton_toggled"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

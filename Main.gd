@@ -35,6 +35,7 @@ func update_config(key, value):
 func create_config():
 	update_config("sound", true)
 	update_config("cursive", true)
+	update_config("decision", OS.has_touchscreen_ui_hint()) # Yes/no buttons in RichTextLabel don't work on mobile with cursive for some reason, default to helper on
 
 func load_config():
 	config = ConfigFile.new()
@@ -48,16 +49,21 @@ func load_config():
 		print("Error opening settings.cfg: ", err)
 		lookup_err()
 
+func apply_one_config(name, button):
+	var value = config.get_value("config", name)
+	if value == null:
+		value = true
+		update_config(name, value)
+	_on_Menu_setting_change(name, value)
+	button.pressed = value
+
 func apply_config():
-	var sound = config.get_value("config", "sound")
-	_on_Menu_setting_change("sound", sound)
-	$Menu/SettingsMenu/VBoxContainer/SoundCheckButton.pressed = sound
-	var cursive = config.get_value("config", "cursive")
-	_on_Menu_setting_change("cursive", cursive)
-	$Menu/SettingsMenu/VBoxContainer/CursiveCheckButton.pressed = cursive
+	apply_one_config("sound", $Menu/SettingsMenu/VBoxContainer/SoundCheckButton)
+	apply_one_config("cursive", $Menu/SettingsMenu/VBoxContainer/CursiveCheckButton)
+	apply_one_config("decision", $Menu/SettingsMenu/VBoxContainer/DecisionCheckButton)
 
 func delayed_show_question():
-	$HUD/HUDTimer.start(5)
+	$HUD/HUDTimer.start(3)
 	yield($HUD/HUDTimer, "timeout")
 	$HUD/TextQuestion.rect_size = Vector2(1024, $HUD/TextQuestion/RichTextLabel.rect_min_size.y)
 	$HUD/TextQuestion.rect_position = Vector2(512 - $HUD/TextQuestion/RichTextLabel.rect_min_size.x / 2, 600)
@@ -71,15 +77,16 @@ func _on_Sky_star_message(message, will_fall, pact=false):
 	if will_fall:
 		knows_star_will_fall = true
 	
-	if OS.has_touchscreen_ui_hint(): # Yes/no buttons don't work on mobile with cursive for some reason, so detect and use print instead, just here
-		use_print_font(not config.get_value("config", "cursive"))
-		if pact: 
-			use_print_font(true)
-	
-	if pact and not answered_pact:
-		delayed_show_question()
-	else:
-		stop_showing_question()
+#	if OS.has_touchscreen_ui_hint(): # Yes/no buttons don't work on mobile with cursive for some reason, so detect and use print instead, just here
+#		use_print_font(not config.get_value("config", "cursive"))
+#		if pact: 
+#			use_print_font(true)
+
+	if config.get_value("config", "decision"):
+		if pact and not answered_pact:
+			delayed_show_question()
+		else:
+			stop_showing_question()
 
 	show_message(message)
 
@@ -153,13 +160,15 @@ func use_print_font(enabled):
 	$HUD/StarMessage.add_font_override("normal_font", load("res://assets/StandardFont.tres") if enabled else null)
 
 func _on_Menu_setting_change(setting, state):
+	update_config(setting, state)
 	if setting == "sound":
-		update_config("sound", state)
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not state)
 	elif setting == "cursive":
-		update_config("cursive", state)
 		use_print_font(not state)
-#		$HUD/StarMessage.add_font_override("normal_font", load("res://assets/StandardFont.tres") if state == false else null)
+	elif setting == "decision":
+		# Most logic is just checking the config value
+		if not state:
+			stop_showing_question()
 
 func _on_Sky_clear_message():
 	show_message("")
