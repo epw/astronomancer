@@ -118,7 +118,7 @@ stream = ExtResource( 8 )
 [node name="StarSpot4" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
 position = Vector2( 810.142, 374.631 )
-message = "Tales of the Sorcerer-King's demon kept some frightened of the night. They whispered of how it waited in the wilderness for the lost and the desperate, and gave them fire, then laughed as it consumed them. They turned to the Sun and begged for help. If the comet had not destroyed them last time, they feared, it would at its next appearance. One among them, believing too little had been done, pushed through his fear and searched us for answers. With no-one else to talk to about it, he ignored our warnings and found one willing to say what he wanted to hear. It told him he could be strong, and those who followed the night were weak. All it truly wanted was death."
+message = "One among those who worshipped the Sun grew anxious during prayers, and pushed through his fear and doctrine to search us for answers. He found one willing to say what he wanted to hear, rather than just the truth. It told him he could be strong, and those who followed the night were weak. All it truly wanted was death."
 
 [node name="CollisionShape2D" parent="Stars/StarSpot4" index="0"]
 light_mask = 2
@@ -143,7 +143,7 @@ stream = ExtResource( 9 )
 [node name="StarSpot6" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
 position = Vector2( 898.352, 308.968 )
-message = "Tales of the Sorcerer-King's demon kept some frightened of the night. They whispered of how it waited in the wilderness for the lost and the desperate, and gave them fire, then laughed as it consumed them. They turned to the Sun and begged for help. If the comet had not destroyed them last time, they feared, it would at its next appearance. One among them, believing too little had been done, pushed through his fear and searched us for answers. With no-one else to talk to about it, he ignored our warnings and found one willing to say what he wanted to hear. It told him he could be strong, and those who followed the night were weak. All it truly wanted was death."
+message = "Tales of the Sorcerer-King's demon kept some frightened of the night. They whispered of how it waited in the wilderness for the lost and the desperate, and gave them fire, then laughed as it consumed them. They turned to the Sun and begged for help. If the comet had not destroyed them last time, they feared, it would at its next appearance."
 
 [node name="CollisionShape2D" parent="Stars/StarSpot6" index="0"]
 light_mask = 2
