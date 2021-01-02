@@ -17,7 +17,6 @@ func _ready():
 	
 	load_config()
 	
-	
 func _process(_delta):
 	if Input.is_action_pressed("ui_cancel"):
 		go_to_menu()
@@ -53,7 +52,7 @@ func apply_config():
 	_on_Menu_setting_change("sound", sound)
 	$Menu/SettingsMenu/VBoxContainer/SoundCheckButton.pressed = sound
 	var cursive = config.get_value("config", "cursive")
-	_on_Menu_setting_change("cursive", config.get_value("config", "cursive"))
+	_on_Menu_setting_change("cursive", cursive)
 	$Menu/SettingsMenu/VBoxContainer/CursiveCheckButton.pressed = cursive
 
 func _on_Sky_star_message(message, will_fall, pact=false):
@@ -71,6 +70,7 @@ func _on_Student_close():
 	remove_child($Student)
 
 func _on_Sunrise_close():
+	#warning-ignore:return_value_discarded
 	get_tree().reload_current_scene() # Restart game
 
 func show_message(msg):

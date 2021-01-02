@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/city.png" type="Texture" id=1]
 [ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://SettingsMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://EveningStarSprite.tscn" type="PackedScene" id=5]
 [ext_resource path="res://StarSpot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://CreditsScreen.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -89,6 +90,9 @@ __meta__ = {
 }
 
 [node name="SettingsMenu" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="CreditsScreen" parent="." instance=ExtResource( 7 )]
 visible = false
 
 [node name="ExtraSky" type="ColorRect" parent="."]

@@ -1,6 +1,6 @@
 extends Control
 
-signal setting_change(setting, state)
+signal setting_change
 
 func _on_SoundCheckButton_toggled(button_pressed):
 	emit_signal("setting_change", "sound", button_pressed)

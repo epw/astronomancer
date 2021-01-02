@@ -101,7 +101,7 @@ func _on_SettingsButton_pressed():
 
 
 func _on_CreditsButton_pressed():
-	pass # Replace with function body.
+	$CreditsScreen.show()
 
 
 func _on_QuitButton_pressed():
