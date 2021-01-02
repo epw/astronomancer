@@ -7,6 +7,7 @@ export (PackedScene) var Sunrise
 var config
 var HUD
 
+var answered_pact = false
 var accepted_pact = false # Whether the player accepted the star's pact
 var knows_star_will_fall = false # Whether the player knows where a star will fall
 
@@ -55,6 +56,17 @@ func apply_config():
 	_on_Menu_setting_change("cursive", cursive)
 	$Menu/SettingsMenu/VBoxContainer/CursiveCheckButton.pressed = cursive
 
+func delayed_show_question():
+	$HUD/HUDTimer.start(5)
+	yield($HUD/HUDTimer, "timeout")
+	$HUD/TextQuestion.rect_size = Vector2(1024, $HUD/TextQuestion/RichTextLabel.rect_min_size.y)
+	$HUD/TextQuestion.rect_position = Vector2(512 - $HUD/TextQuestion/RichTextLabel.rect_min_size.x / 2, 600)
+	$HUD/TextQuestion.show()
+
+func stop_showing_question():
+	$HUD/TextQuestion.hide()
+	$HUD/HUDTimer.stop()
+
 func _on_Sky_star_message(message, will_fall, pact=false):
 	if will_fall:
 		knows_star_will_fall = true
@@ -63,6 +75,11 @@ func _on_Sky_star_message(message, will_fall, pact=false):
 		use_print_font(not config.get_value("config", "cursive"))
 		if pact: 
 			use_print_font(true)
+	
+	if pact and not answered_pact:
+		delayed_show_question()
+	else:
+		stop_showing_question()
 
 	show_message(message)
 
@@ -95,6 +112,8 @@ func _on_StarMessage_meta_clicked(meta):
 	elif meta == "no":
 		pact_star.message = no_pact_message
 	pact_star.clicked()
+	answered_pact = true
+	stop_showing_question()
 
 func start_dialog(dialog, closing_signal):
 	show_message("")
@@ -144,8 +163,18 @@ func _on_Menu_setting_change(setting, state):
 
 func _on_Sky_clear_message():
 	show_message("")
+	stop_showing_question()
 	$Sky.cleared_message()
 
 
 func _on_Menu_sky_ready():
 	$Sky.set_process(true)
+
+
+func _on_YesButton_pressed():
+	_on_StarMessage_meta_clicked("yes")
+
+
+func _on_NoButton_pressed():
+	_on_StarMessage_meta_clicked("no")
+

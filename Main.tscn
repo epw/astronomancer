@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Sky.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/CursiveTheme.theme" type="Theme" id=2]
@@ -15,6 +15,14 @@
 [ext_resource path="res://assets/citybutton-hover.png" type="Texture" id=13]
 [ext_resource path="res://assets/citybutton-pressed.png" type="Texture" id=14]
 [ext_resource path="res://Menu.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 16 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -42,6 +50,48 @@ selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextQuestion" type="HBoxContainer" parent="HUD"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -36.0
+margin_top = -40.0
+margin_right = 36.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HUD/TextQuestion"]
+margin_bottom = 40.0
+rect_min_size = Vector2( 400, 40 )
+theme = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=#ffaaaa][u]Accept the star's offer?[/u][/color]"
+text = "Accept the star's offer?"
+
+[node name="YesButton" type="Button" parent="HUD/TextQuestion"]
+margin_left = 4.0
+margin_right = 38.0
+margin_bottom = 40.0
+text = "Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoButton" type="Button" parent="HUD/TextQuestion"]
+margin_left = 42.0
+margin_right = 72.0
+margin_bottom = 40.0
+text = "No"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUDTimer" type="Timer" parent="HUD"]
+one_shot = true
 
 [node name="StudentButton" type="TextureButton" parent="."]
 light_mask = 2
@@ -93,6 +143,8 @@ margin_bottom = 768.0
 [connection signal="meta_clicked" from="HUD/StarMessage" to="." method="_on_StarMessage_meta_clicked"]
 [connection signal="mouse_entered" from="HUD/StarMessage" to="." method="_on_StarMessage_mouse_entered"]
 [connection signal="mouse_exited" from="HUD/StarMessage" to="." method="_on_StarMessage_mouse_exited"]
+[connection signal="pressed" from="HUD/TextQuestion/YesButton" to="." method="_on_YesButton_pressed"]
+[connection signal="pressed" from="HUD/TextQuestion/NoButton" to="." method="_on_NoButton_pressed"]
 [connection signal="pressed" from="StudentButton" to="." method="_on_StudentButton_pressed"]
 [connection signal="pressed" from="SunriseButton" to="." method="_on_SunriseButton_pressed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]
