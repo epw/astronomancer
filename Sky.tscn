@@ -68,12 +68,12 @@ script = ExtResource( 6 )
 [node name="Stars" type="Node2D" parent="."]
 light_mask = 2
 
-[node name="MorningStar" parent="Stars" instance=ExtResource( 2 )]
+[node name="EveningStar" parent="Stars" instance=ExtResource( 2 )]
 light_mask = 2
 position = Vector2( 564.065, 262.721 )
 message = "I have seen this comet pass through your sky time and time again, with grandmothers' grandmothers' lives passing between returns. At those times have come fires, a flood, wars and tyrants, the fall of a kingdom. Danger is at your doorstep once more."
 
-[node name="CollisionShape2D" parent="Stars/MorningStar" index="0"]
+[node name="CollisionShape2D" parent="Stars/EveningStar" index="0"]
 light_mask = 2
 shape = SubResource( 1 )
 
@@ -197,7 +197,7 @@ mode = 3
 range_item_cull_mask = 2
 shadow_item_cull_mask = 2
 
-[editable path="Stars/MorningStar"]
+[editable path="Stars/EveningStar"]
 
 [editable path="Stars/PactStarSpot"]
 

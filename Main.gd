@@ -13,7 +13,7 @@ var knows_star_will_fall = false # Whether the player knows where a star will fa
 func _ready():
 	$HUD/StarMessage.rect_size = Vector2(1024, 128)
 	$HUD/StarMessage.rect_position = Vector2(0, 768 - $HUD/StarMessage.rect_size.y)
-	$Menu.set_evening_star($Sky/Stars/MorningStar)
+	$Menu.set_evening_star($Sky/Stars/EveningStar)
 	
 	load_config()
 	
