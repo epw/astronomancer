@@ -8,7 +8,8 @@ font_data = ExtResource( 1 )
 
 [node name="DialogueButton" type="Button"]
 margin_right = 12.0
-margin_bottom = 20.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 0, 45 )
 custom_fonts/font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
