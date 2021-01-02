@@ -36,28 +36,36 @@ __meta__ = {
 }
 
 [node name="Credits" type="RichTextLabel" parent="VBoxContainer"]
-margin_right = 406.0
+margin_right = 800.0
+margin_bottom = 450.0
+rect_min_size = Vector2( 800, 450 )
 focus_mode = 2
 theme = ExtResource( 4 )
 bbcode_enabled = true
-bbcode_text = "Written and produced by Eric Willisson, 2021
+bbcode_text = "Written and produced by Eric Willisson, 2021.
 
-Code licensed under the Apache License, Version 2.0 (the \"License\"). Assets licensed under CC-BY-SA 2.0
+This game is licensed under the Apache License, Version 2.0 (the \"License\"), and CC0.
 
-Includes assets:
+Assets:
+
 Star background: \"M45, The Pleiades (Seven Sisters)\", by Dylan O'Donnell (https://deography.com/m45-the-pleiades-seven-sisters/)
-City image: by Diego Delso, delso.photo, License CC-BY-SA (https://commons.wikimedia.org/wiki/File:Naghsh-e_rostam,_Ir%C3%A1n,_2016-09-24,_DD_20-24_PAN.jpg)
+
+Stone buildings image: by Diego Delso, delso.photo, License CC-BY-SA (https://commons.wikimedia.org/wiki/File:Naghsh-e_rostam,_Ir%C3%A1n,_2016-09-24,_DD_20-24_PAN.jpg)
+
 Scroll button: by Endymian <http://www.magicmeeplegames.com/>, (https://opengameart.org/content/burnt-scroll)
 
 Game was created using Godot Engine v3.2.2
 "
-text = "Written and produced by Eric Willisson, 2021
+text = "Written and produced by Eric Willisson, 2021.
 
-Code licensed under the Apache License, Version 2.0 (the \"License\"). Assets licensed under CC-BY-SA 2.0
+This game is licensed under the Apache License, Version 2.0 (the \"License\"), and CC0.
 
-Includes assets:
+Assets:
+
 Star background: \"M45, The Pleiades (Seven Sisters)\", by Dylan O'Donnell (https://deography.com/m45-the-pleiades-seven-sisters/)
-City image: by Diego Delso, delso.photo, License CC-BY-SA (https://commons.wikimedia.org/wiki/File:Naghsh-e_rostam,_Ir%C3%A1n,_2016-09-24,_DD_20-24_PAN.jpg)
+
+Stone buildings image: by Diego Delso, delso.photo, License CC-BY-SA (https://commons.wikimedia.org/wiki/File:Naghsh-e_rostam,_Ir%C3%A1n,_2016-09-24,_DD_20-24_PAN.jpg)
+
 Scroll button: by Endymian <http://www.magicmeeplegames.com/>, (https://opengameart.org/content/burnt-scroll)
 
 Game was created using Godot Engine v3.2.2
@@ -65,9 +73,10 @@ Game was created using Godot Engine v3.2.2
 selection_enabled = true
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
-margin_top = 40.0
-margin_right = 406.0
-margin_bottom = 85.0
+margin_top = 490.0
+margin_right = 93.0
+margin_bottom = 535.0
+size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 2 )
 text = "Back"
 align = 0
